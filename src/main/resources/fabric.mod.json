@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "dutchfoodsnstuff",
+	"version": "${version}",
+	"name": "Dutch Foods 'n Stuff",
+	"description": "This is a Mod That Adds Dutch Food and More!",
+	"authors": [
+		"GoldMonke"
+	],
+	"contact": {
+		"homepage": "https://goldmonke.me",
+		"sources": "https://github.com/ItsGoldMonke/Dutch-Foods-n-Stuff"
+	},
+	"license": "MIT",
+	"icon": "assets/dutchfoodsnstuff/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"me.goldmonke.dutchfoodnstuff.DutchFoodsnStuff"
+		],
+		"fabric-datagen": [
+			"me.goldmonke.dutchfoodnstuff.DutchFoodsnStuffDataGenerator"
+		],
+        "client": [
+          "me.goldmonke.dutchfoodnstuff.DutchFoodsnStuffClient"
+        ]
+	},
+	"mixins": [
+		"dutchfoodsnstuff.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
