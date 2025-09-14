@@ -17,6 +17,7 @@ import java.util.function.Function;
 public class ModItems {
     // Register stuff
     public static final Item CHEESE = register("cheese", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(10).saturationModifier(0.5f).build()));
+    public static final Item CHEESE_SLICE = register("cheese_slice", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(5).saturationModifier(0.5f).build()));
 
 
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
@@ -26,11 +27,10 @@ public class ModItems {
         // Create the item instance.
         Item item = itemFactory.apply(settings.registryKey(itemKey));
 
-        // Register the item.
+        // Register the items.
         Registry.register(Registries.ITEM, itemKey, item);
 
 
-        // Add the item to item group
 
 
         return item;
@@ -38,9 +38,11 @@ public class ModItems {
 
     public static void initialize() {
 
+        // Add the items to item group
         ItemGroupEvents.modifyEntriesEvent((ItemGroups.FOOD_AND_DRINK))
                 .register((itemGroup) -> {
                     itemGroup.add(ModItems.CHEESE);
+                    itemGroup.add(ModItems.CHEESE_SLICE);
                 });
 
 
