@@ -16,7 +16,6 @@ import java.util.function.Function;
 
 public class ModItems {
     // Register stuff
-    public static final Item CHEESE_BLOCK = register("cheese_block", Item::new, new Item.Settings());
     public static final Item CHEESE = register("cheese", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(10).saturationModifier(0.5f).build()));
 
 
@@ -33,19 +32,18 @@ public class ModItems {
 
         // Add the item to item group
 
-        ItemGroupEvents.modifyEntriesEvent((ItemGroups.FOOD_AND_DRINK))
-                .register((itemGroup) -> {
-                    itemGroup.add(ModItems.CHEESE);
-                    itemGroup.add(ModItems.CHEESE_BLOCK);
-                        });
-
-
-
 
         return item;
     }
 
     public static void initialize() {
+
+        ItemGroupEvents.modifyEntriesEvent((ItemGroups.FOOD_AND_DRINK))
+                .register((itemGroup) -> {
+                    itemGroup.add(ModItems.CHEESE);
+                });
+
+
     }
 
 }

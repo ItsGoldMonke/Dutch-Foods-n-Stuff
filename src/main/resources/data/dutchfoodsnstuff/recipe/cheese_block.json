@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "CCC",
+    "CCC",
+    "CCC"
+    ],
+  "key": {
+    "C": "dutchfoodsnstuff:cheese"
+  },
+  "result": {
+    "count": 1,
+    "id": "dutchfoodsnstuff:cheese_block"
+  }
+}
