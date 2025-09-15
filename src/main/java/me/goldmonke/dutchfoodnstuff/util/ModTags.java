@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier;
 public class ModTags {
     public static class Blocks {
 
+        public static final TagKey<Block> CHEESE_SLICER_MINEABLE = createTag("mineable/cheese_slicer");
 
         private static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(DutchFoodsnStuff.MOD_ID, name));
@@ -20,6 +21,7 @@ public class ModTags {
 
     public static class Items {
 
+        public static final TagKey<Item> REPAIRS_CHEESE_SLICER = createTag("repairs_cheese_slicer");
 
 
         private static TagKey<Item> createTag(String name) {
