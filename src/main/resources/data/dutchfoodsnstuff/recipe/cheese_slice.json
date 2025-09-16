@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "dutchfoodsnstuff:cheese_slicer",
+    "dutchfoodsnstuff:cheese"
+  ],
+  "result": {
+    "count": 9,
+    "id": "dutchfoodsnstuff:cheese_slice"
+  }
+}
