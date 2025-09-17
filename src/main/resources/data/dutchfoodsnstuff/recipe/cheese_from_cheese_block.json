@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "group": "cheese",
   "category": "misc",
   "ingredients": [
     "dutchfoodsnstuff:cheese_block"

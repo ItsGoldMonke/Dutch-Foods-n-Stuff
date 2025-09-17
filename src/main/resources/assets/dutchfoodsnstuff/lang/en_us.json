@@ -2,5 +2,7 @@
   "item.dutchfoodsnstuff.cheese_block": "Cheese Block",
   "item.dutchfoodsnstuff.cheese": "Cheese",
   "item.dutchfoodsnstuff.cheese_slice": "Cheese Slice",
-  "item.dutchfoodsnstuff.cheese_slicer": "Cheese Slicer"
+  "item.dutchfoodsnstuff.cheese_slicer": "Cheese Slicer",
+  "item.dutchfoodsnstuff.stroopwafel": "Stroopwafel",
+  "tag.item.dutchfoodsnstuff.repairs_cheese_slicer": "Repairs Cheese Slicer"
 }

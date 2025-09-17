@@ -29,8 +29,7 @@ public class ModItems {
             2F,
             1,
             ModTags.Items.REPAIRS_CHEESE_SLICER
-
-    );
+                );
 
 
 
@@ -39,6 +38,8 @@ public class ModItems {
     public static final Item CHEESE = register("cheese", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(10).saturationModifier(0.5f).build()));
     public static final Item CHEESE_SLICE = register("cheese_slice", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(5).saturationModifier(0.5f).build()));
     public static final Item CHEESE_SLICER = register("cheese_slicer", CheeseSlicer::new, new Item.Settings().tool(CHEESE_SLICER_TOOL_MATERIAL, ModTags.Blocks.CHEESE_SLICER_MINEABLE, 2.0F, -2.8F, 0));
+    public static final Item STROOPWAFEL = register("stroopwafel", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(10).saturationModifier(0.5f).build()));
+
 
 
 
@@ -65,6 +66,7 @@ public class ModItems {
                 .register((itemGroup) -> {
                     itemGroup.add(ModItems.CHEESE);
                     itemGroup.add(ModItems.CHEESE_SLICE);
+                    itemGroup.add(ModItems.STROOPWAFEL);
                 });
 
         ItemGroupEvents.modifyEntriesEvent((ItemGroups.TOOLS))
