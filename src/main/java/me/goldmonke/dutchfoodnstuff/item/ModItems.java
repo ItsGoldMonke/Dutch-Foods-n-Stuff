@@ -1,11 +1,13 @@
 package me.goldmonke.dutchfoodnstuff.item;
 
 import me.goldmonke.dutchfoodnstuff.DutchFoodsnStuff;
+import me.goldmonke.dutchfoodnstuff.block.ModBlocks;
 import me.goldmonke.dutchfoodnstuff.item.custom.CheeseSlicer;
 import me.goldmonke.dutchfoodnstuff.util.ModTags;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.component.type.FoodComponent;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ToolMaterial;
@@ -39,6 +41,7 @@ public class ModItems {
     public static final Item CHEESE_SLICE = register("cheese_slice", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(5).saturationModifier(0.5f).build()));
     public static final Item CHEESE_SLICER = register("cheese_slicer", CheeseSlicer::new, new Item.Settings().tool(CHEESE_SLICER_TOOL_MATERIAL, ModTags.Blocks.CHEESE_SLICER_MINEABLE, 2.0F, -2.8F, 0));
     public static final Item STROOPWAFEL = register("stroopwafel", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(10).saturationModifier(0.5f).build()));
+    public static final Item KALE_SEEDS = register("kale_seeds", settings -> new BlockItem(ModBlocks.KALE_CROP, settings), new Item.Settings().useItemPrefixedTranslationKey());
 
 
 
@@ -72,6 +75,11 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent((ItemGroups.TOOLS))
                 .register((itemGroup) -> {
                     itemGroup.add(ModItems.CHEESE_SLICER);
+                });
+
+        ItemGroupEvents.modifyEntriesEvent((ItemGroups.NATURAL))
+                .register((itemGroup) -> {
+                    itemGroup.add(ModItems.KALE_SEEDS);
                 });
 
 

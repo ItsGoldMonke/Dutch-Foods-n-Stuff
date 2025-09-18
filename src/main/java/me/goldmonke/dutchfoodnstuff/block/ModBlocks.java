@@ -1,6 +1,7 @@
 package me.goldmonke.dutchfoodnstuff.block;
 
 import me.goldmonke.dutchfoodnstuff.DutchFoodsnStuff;
+import me.goldmonke.dutchfoodnstuff.block.custom.KaleBlock;
 import me.goldmonke.dutchfoodnstuff.item.ModItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
@@ -50,6 +51,8 @@ public class ModBlocks {
             AbstractBlock.Settings.create().strength(0.5f).sounds(BlockSoundGroup.CACTUS_FLOWER),
             true
     );
+
+    public static final Block KALE_CROP = register("kale_crop", KaleBlock::new, AbstractBlock.Settings.create().nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP), false);
 
 
 
