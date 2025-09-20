@@ -15,5 +15,5 @@ public class DutchFoodsnStuff implements ModInitializer {
 	public void onInitialize() {
         ModItems.initialize();
         ModBlocks.initialize();
-	}
+    }
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "dutchfoodsnstuff:block/crop_cross",
+  "textures": {
+    "cross": "dutchfoodsnstuff:block/kale_crop_stage1"
+  }
+}

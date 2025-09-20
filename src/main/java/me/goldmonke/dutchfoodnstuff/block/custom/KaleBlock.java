@@ -27,7 +27,7 @@ public class KaleBlock extends CropBlock {
 
     @Override
     protected ItemConvertible getSeedsItem() {
-        return ModItems.CHEESE_SLICE;
+        return ModItems.KALE_SEEDS;
     }
 
     @Override

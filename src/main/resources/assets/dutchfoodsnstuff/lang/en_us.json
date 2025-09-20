@@ -4,5 +4,8 @@
   "item.dutchfoodsnstuff.cheese_slice": "Cheese Slice",
   "item.dutchfoodsnstuff.cheese_slicer": "Cheese Slicer",
   "item.dutchfoodsnstuff.stroopwafel": "Stroopwafel",
-  "tag.item.dutchfoodsnstuff.repairs_cheese_slicer": "Repairs Cheese Slicer"
+  "item.dutchfoodsnstuff.kale": "Kale",
+  "item.dutchfoodsnstuff.kale_seeds": "Kale Seeds",
+  "tag.item.dutchfoodsnstuff.repairs_cheese_slicer": "Repairs Cheese Slicer",
+  "itemGroup.dutch_foods_items": "Dutch Foods Items"
 }

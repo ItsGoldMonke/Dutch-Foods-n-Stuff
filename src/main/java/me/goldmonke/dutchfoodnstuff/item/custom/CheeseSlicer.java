@@ -1,23 +1,17 @@
 package me.goldmonke.dutchfoodnstuff.item.custom;
 
-import me.goldmonke.dutchfoodnstuff.DutchFoodsnStuff;
 import me.goldmonke.dutchfoodnstuff.block.ModBlocks;
 import me.goldmonke.dutchfoodnstuff.item.ModItems;
-import net.fabricmc.fabric.api.item.v1.EnchantingContext;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.ItemEntity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;

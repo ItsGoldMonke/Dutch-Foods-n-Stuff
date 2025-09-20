@@ -4,20 +4,26 @@ import me.goldmonke.dutchfoodnstuff.DutchFoodsnStuff;
 import me.goldmonke.dutchfoodnstuff.block.ModBlocks;
 import me.goldmonke.dutchfoodnstuff.item.custom.CheeseSlicer;
 import me.goldmonke.dutchfoodnstuff.util.ModTags;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
+import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
+import net.minecraft.block.Blocks;
 import net.minecraft.component.type.FoodComponent;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.*;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.RandomChanceLootCondition;
+import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+import java.util.Optional;
 import java.util.function.Function;
 
 public class ModItems {
@@ -42,6 +48,7 @@ public class ModItems {
     public static final Item CHEESE_SLICER = register("cheese_slicer", CheeseSlicer::new, new Item.Settings().tool(CHEESE_SLICER_TOOL_MATERIAL, ModTags.Blocks.CHEESE_SLICER_MINEABLE, 2.0F, -2.8F, 0));
     public static final Item STROOPWAFEL = register("stroopwafel", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(10).saturationModifier(0.5f).build()));
     public static final Item KALE_SEEDS = register("kale_seeds", settings -> new BlockItem(ModBlocks.KALE_CROP, settings), new Item.Settings().useItemPrefixedTranslationKey());
+    public static final Item KALE = register("kale", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f).build()));
 
 
 
@@ -62,7 +69,38 @@ public class ModItems {
         return item;
     }
 
+
+    // Make Custom Item Group(s)
+    public static final RegistryKey<ItemGroup> DUTCH_FOODS_ITEMGROUP = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(DutchFoodsnStuff.MOD_ID, "dutch_foods_items"));
+    public static final ItemGroup DUTCH_ITEM_GROUP = FabricItemGroup.builder()
+            .icon(() -> new ItemStack(ModItems.CHEESE))
+            .displayName(Text.translatable("itemGroup.dutch_foods_items"))
+            .build();
+
+// is this used???????????????????
+    private static final Optional<RegistryKey<LootTable>> TALL_GRASS_LOOT_TABLE_ID = Blocks.TALL_GRASS.getLootTableKey();
+
+
+
+
     public static void initialize() {
+
+        // Register Item Groups
+        Registry.register(Registries.ITEM_GROUP, DUTCH_FOODS_ITEMGROUP, DUTCH_ITEM_GROUP);
+
+        // Add items to custom group
+        ItemGroupEvents.modifyEntriesEvent(DUTCH_FOODS_ITEMGROUP).register(itemGroup -> {
+            itemGroup.add(ModItems.CHEESE);
+            itemGroup.add(ModItems.CHEESE_SLICE);
+            itemGroup.add(ModBlocks.CHEESE_BLOCK);
+            itemGroup.add(ModItems.CHEESE_SLICER);
+            itemGroup.add(ModItems.STROOPWAFEL);
+            itemGroup.add(ModItems.KALE);
+            itemGroup.add(ModItems.KALE_SEEDS);
+        });
+
+
+
 
         // Add the items to item group
         ItemGroupEvents.modifyEntriesEvent((ItemGroups.FOOD_AND_DRINK))
@@ -70,6 +108,7 @@ public class ModItems {
                     itemGroup.add(ModItems.CHEESE);
                     itemGroup.add(ModItems.CHEESE_SLICE);
                     itemGroup.add(ModItems.STROOPWAFEL);
+                    itemGroup.add(ModItems.KALE);
                 });
 
         ItemGroupEvents.modifyEntriesEvent((ItemGroups.TOOLS))
@@ -80,9 +119,23 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent((ItemGroups.NATURAL))
                 .register((itemGroup) -> {
                     itemGroup.add(ModItems.KALE_SEEDS);
+                    itemGroup.add(ModItems.KALE);
                 });
 
+        // Make items compostable
+        CompostingChanceRegistry.INSTANCE.add(ModItems.KALE, 0.65f);
+        CompostingChanceRegistry.INSTANCE.add(ModItems.KALE_SEEDS, 0.3f);
 
+
+
+        LootTableEvents.MODIFY.register((registryKey, builder, lootTableSource, wrapperLookup) -> {
+            if (lootTableSource.isBuiltin() && TALL_GRASS_LOOT_TABLE_ID.isPresent() && TALL_GRASS_LOOT_TABLE_ID.get().equals(registryKey)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .with(ItemEntry.builder(ModItems.KALE_SEEDS).conditionally(RandomChanceLootCondition.builder(0.125f)));
+
+                builder.pool(poolBuilder);
+            }
+        });
 
     }
 
