@@ -1,15 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "pattern": [
-    " II",
-    " SI",
-    "S  "
-  ],
+  "category": "equipment",
   "key": {
-    "S": "minecraft:stick",
-    "I": "#c:ingots/iron"
+    "i": "#c:ingots/iron",
+    "s": "#c:rods/wooden"
   },
+  "pattern": [
+    " ii",
+    " si",
+    "s  "
+  ],
   "result": {
     "count": 1,
     "id": "dutchfoodsnstuff:cheese_slicer"

@@ -1,14 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "pattern": [
-    "CCC",
-    "CCC",
-    "CCC"
-    ],
   "key": {
-    "C": "dutchfoodsnstuff:cheese"
+    "#": "dutchfoodsnstuff:cheese"
   },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
   "result": {
     "count": 1,
     "id": "dutchfoodsnstuff:cheese_block"

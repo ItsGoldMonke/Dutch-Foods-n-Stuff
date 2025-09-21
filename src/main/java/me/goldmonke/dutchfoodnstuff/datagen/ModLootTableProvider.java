@@ -29,4 +29,3 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         
     }
 }
-// sure paste it ig - loot table for kale crop (similar to wheat in terms of drop) It maybe works now im running datagen

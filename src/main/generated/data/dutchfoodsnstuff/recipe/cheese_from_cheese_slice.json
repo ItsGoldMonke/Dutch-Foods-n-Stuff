@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "cheese",
+  "key": {
+    "s": "dutchfoodsnstuff:cheese_slice"
+  },
+  "pattern": [
+    "ss",
+    "ss"
+  ],
+  "result": {
+    "count": 2,
+    "id": "dutchfoodsnstuff:cheese"
+  }
+}

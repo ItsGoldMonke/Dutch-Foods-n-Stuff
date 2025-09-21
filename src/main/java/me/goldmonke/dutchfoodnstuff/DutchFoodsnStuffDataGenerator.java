@@ -1,8 +1,6 @@
 package me.goldmonke.dutchfoodnstuff;
 
-import me.goldmonke.dutchfoodnstuff.datagen.ModBlockTagProvider;
-import me.goldmonke.dutchfoodnstuff.datagen.ModItemTagProvider;
-import me.goldmonke.dutchfoodnstuff.datagen.ModLootTableProvider;
+import me.goldmonke.dutchfoodnstuff.datagen.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -14,5 +12,7 @@ public class DutchFoodsnStuffDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModBlockTagProvider::new);
         pack.addProvider(ModItemTagProvider::new);
         pack.addProvider(ModLootTableProvider::new);
+        pack.addProvider(ModModelProvider::new);
+        pack.addProvider(ModRecipeProvider::new);
 	}
 }
