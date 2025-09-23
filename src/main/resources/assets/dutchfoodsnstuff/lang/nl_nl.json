@@ -1,0 +1,17 @@
+{
+  "item.dutchfoodsnstuff.cheese_block": "Kaas Blok",
+  "item.dutchfoodsnstuff.cheese": "Kaas",
+  "item.dutchfoodsnstuff.cheese_slice": "Kaas Plakje",
+  "item.dutchfoodsnstuff.cheese_slicer": "Kaasschaaf",
+  "item.dutchfoodsnstuff.stroopwafel": "Stroopwafel",
+  "item.dutchfoodsnstuff.kale": "Boerenkool",
+  "item.dutchfoodsnstuff.kale_seeds": "Boerenkool Zaadjes",
+  "item.dutchfoodsnstuff.klompen": "Clogs",
+
+  "item.dutchfoodsnstuff.klompen.tooltip": "Maakt je langzamer",
+
+  "tag.item.dutchfoodsnstuff.repairs_cheese_slicer": "Repareert Kaasschaaf",
+  "tag.item.dutchfoodsnstuff.repairs_wooden_armor": "Repareert Klompen",
+
+  "itemGroup.dutch_foods_items": "Dutch Foods 'n Stuff"
+}
