@@ -1,4 +1,5 @@
 // 1.21.8	-999999999-01-01T00:00:00	Dutch Foods 'n Stuff/DutchFoodsNStuffRecipeProvider
+b0c96fab0147fc6963a75b7e59bb5dc522c4ea65 data/dutchfoodsnstuff/advancement/recipes/food/stroopwafel.json
 dc9ee107ef5ca5c88e8ddb6e158c601bb294aa32 data/dutchfoodsnstuff/advancement/recipes/misc/cheese.json
 39887a8bd4b604b5863640e99de57829a7172438 data/dutchfoodsnstuff/advancement/recipes/misc/cheese_block.json
 1afbd50ea59c6c7f4aa2677df7fd036e90f81ee5 data/dutchfoodsnstuff/advancement/recipes/misc/cheese_from_cheese_slice.json
@@ -9,3 +10,4 @@ dc9ee107ef5ca5c88e8ddb6e158c601bb294aa32 data/dutchfoodsnstuff/advancement/recip
 c9b0c6972965bdb2ed113a78222dad9670ca1a7f data/dutchfoodsnstuff/recipe/cheese_from_cheese_slice.json
 0b7a6d7c9557861eb76210d19b55356ab09e95e6 data/dutchfoodsnstuff/recipe/cheese_from_milk_wheat.json
 78b12c5486a2e3e70b8f6b3443bbdb6530603a31 data/dutchfoodsnstuff/recipe/cheese_slicer.json
+a201429626820777eed9da6a9be42d0e88c5edbd data/dutchfoodsnstuff/recipe/stroopwafel.json

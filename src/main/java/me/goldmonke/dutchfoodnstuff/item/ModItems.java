@@ -2,6 +2,8 @@ package me.goldmonke.dutchfoodnstuff.item;
 
 import me.goldmonke.dutchfoodnstuff.DutchFoodsnStuff;
 import me.goldmonke.dutchfoodnstuff.block.ModBlocks;
+import me.goldmonke.dutchfoodnstuff.item.armor.KlompenItem;
+import me.goldmonke.dutchfoodnstuff.item.armor.WoodenArmorMaterial;
 import me.goldmonke.dutchfoodnstuff.item.custom.CheeseSlicer;
 import me.goldmonke.dutchfoodnstuff.util.ModTags;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
@@ -9,8 +11,14 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.minecraft.block.Blocks;
+import net.minecraft.component.type.ConsumableComponent;
+import net.minecraft.component.type.ConsumableComponents;
 import net.minecraft.component.type.FoodComponent;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
+import net.minecraft.item.consume.ApplyEffectsConsumeEffect;
+import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
@@ -46,10 +54,19 @@ public class ModItems {
     public static final Item CHEESE = register("cheese", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(10).saturationModifier(0.5f).build()));
     public static final Item CHEESE_SLICE = register("cheese_slice", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(5).saturationModifier(0.5f).build()));
     public static final Item CHEESE_SLICER = register("cheese_slicer", CheeseSlicer::new, new Item.Settings().tool(CHEESE_SLICER_TOOL_MATERIAL, ModTags.Blocks.CHEESE_SLICER_MINEABLE, 2.0F, -2.8F, 0));
-    public static final Item STROOPWAFEL = register("stroopwafel", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(10).saturationModifier(0.5f).build()));
+    public static final Item STROOPWAFEL = register("stroopwafel", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(10).saturationModifier(0.5f).build(), ConsumableComponents.food().consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.SPEED, 10 * 20, 1), 1.0f)).build()));
     public static final Item KALE_SEEDS = register("kale_seeds", settings -> new BlockItem(ModBlocks.KALE_CROP, settings), new Item.Settings().useItemPrefixedTranslationKey());
     public static final Item KALE = register("kale", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f).build()));
 
+
+    // Special Items ig
+
+    public static final Item KLOMPEN = register(
+            "klompen",
+            KlompenItem::new,
+            new Item.Settings().armor(WoodenArmorMaterial.INSTANCE, EquipmentType.BOOTS)
+                    .maxDamage(EquipmentType.HELMET.getMaxDamage(WoodenArmorMaterial.BASE_DURABILITY))
+    );
 
 
 
@@ -77,7 +94,6 @@ public class ModItems {
             .displayName(Text.translatable("itemGroup.dutch_foods_items"))
             .build();
 
-// is this used???????????????????
     private static final Optional<RegistryKey<LootTable>> TALL_GRASS_LOOT_TABLE_ID = Blocks.TALL_GRASS.getLootTableKey();
 
 
@@ -97,6 +113,7 @@ public class ModItems {
             itemGroup.add(ModItems.STROOPWAFEL);
             itemGroup.add(ModItems.KALE);
             itemGroup.add(ModItems.KALE_SEEDS);
+            itemGroup.add(ModItems.KLOMPEN);
         });
 
 

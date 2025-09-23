@@ -53,6 +53,15 @@ public class ModRecipeProvider  extends FabricRecipeProvider {
                         .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
                         .offerTo(recipeExporter);
 
+                createShaped(RecipeCategory.FOOD, ModItems.STROOPWAFEL)
+                        .pattern(" b ")
+                        .pattern(" h ")
+                        .pattern(" b ")
+                        .input('b', ConventionalItemTags.BREAD_FOODS)
+                        .input('h', ConventionalItemTags.HONEY_DRINKS)
+                        .criterion(hasItem(Items.BREAD), conditionsFromItem(Items.BREAD))
+                        .offerTo(recipeExporter);
+
 
             }
         };

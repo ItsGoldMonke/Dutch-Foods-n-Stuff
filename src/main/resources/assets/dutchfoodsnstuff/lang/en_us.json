@@ -6,6 +6,12 @@
   "item.dutchfoodsnstuff.stroopwafel": "Stroopwafel",
   "item.dutchfoodsnstuff.kale": "Kale",
   "item.dutchfoodsnstuff.kale_seeds": "Kale Seeds",
+  "item.dutchfoodsnstuff.klompen": "Clogs",
+
+  "item.dutchfoodsnstuff.klompen.tooltip": "Makes you slower",
+
   "tag.item.dutchfoodsnstuff.repairs_cheese_slicer": "Repairs Cheese Slicer",
-  "itemGroup.dutch_foods_items": "Dutch Foods Items"
+  "tag.item.dutchfoodsnstuff.repairs_wooden_armor": "Repairs Wooden Armor",
+
+  "itemGroup.dutch_foods_items": "Dutch Foods 'n Stuff"
 }

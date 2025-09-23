@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "#c:foods/bread",
+    "h": "#c:drinks/honey"
+  },
+  "pattern": [
+    " b ",
+    " h ",
+    " b "
+  ],
+  "result": {
+    "count": 1,
+    "id": "dutchfoodsnstuff:stroopwafel"
+  }
+}

@@ -30,6 +30,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.STROOPWAFEL, Models.GENERATED);
         itemModelGenerator.register(ModItems.KALE, Models.GENERATED);
         itemModelGenerator.register(ModItems.KALE_SEEDS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.KLOMPEN, Models.GENERATED);
+
     }
 
 

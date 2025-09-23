@@ -17,5 +17,5 @@ This mod adds a bunch of typical Dutch things and things associated with the Dut
 
 Credits:
 * **Fabric Docs** For their amazing documentation on fabric modding!
-* **Kaupenjoe** For making great youtube modding tutorials & helping me with things I didn't get from fabric docs
+* ~~**Kaupenjoe** For making great youtube modding tutorials & helping me with things I didn't get from fabric docs~~ **ElectricSteve** for helping with hard stuff
 * **Farmer's Delight / Vectorwing** For their block/crop_cross.json file which was useful for me
