@@ -22,7 +22,7 @@ public class KlompenItem extends Item {
         if (!world.isClient()) {
             if (entity instanceof PlayerEntity player) {
                 if (player.getEquippedStack(EquipmentSlot.FEET).isOf(ModItems.KLOMPEN)) {
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 5, 0, false, false, false));
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20, 0, false, false, false));
                 }
             }
         }
