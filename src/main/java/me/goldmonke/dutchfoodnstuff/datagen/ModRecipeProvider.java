@@ -13,6 +13,7 @@ import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
@@ -51,6 +52,13 @@ public class ModRecipeProvider  extends FabricRecipeProvider {
                         .input('s', ConventionalItemTags.WOODEN_RODS)
                         .input('i', ConventionalItemTags.IRON_INGOTS)
                         .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                        .offerTo(recipeExporter);
+                createShaped(RecipeCategory.COMBAT, ModItems.KLOMPEN)
+                        .pattern("   ")
+                        .pattern("w w")
+                        .pattern("w w")
+                        .input('w', ItemTags.PLANKS)
+                        .criterion(hasItem(ModItems.CHEESE), conditionsFromItem(ModItems.CHEESE))
                         .offerTo(recipeExporter);
 
                 createShaped(RecipeCategory.FOOD, ModItems.STROOPWAFEL)
