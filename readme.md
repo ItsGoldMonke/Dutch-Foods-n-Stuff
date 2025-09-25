@@ -20,9 +20,7 @@
 - Tullip clusters
 - Bitterballen
 - **_More_**
-
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rh8zBjl2pKo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[![Youtube Video](https://github.com/user-attachments/assets/3917427b-2012-4509-962d-8ae8fb5101c8)](https://www.youtube.com/watch?v=rh8zBjl2pKo)
 
 Credits:
 * **Fabric Docs** For their amazing documentation on fabric modding!
