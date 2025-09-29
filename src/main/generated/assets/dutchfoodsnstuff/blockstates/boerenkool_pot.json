@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "dutchfoodsnstuff:block/boerenkool_pot",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "dutchfoodsnstuff:block/boerenkool_pot"
+    },
+    "facing=south": {
+      "model": "dutchfoodsnstuff:block/boerenkool_pot",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "dutchfoodsnstuff:block/boerenkool_pot",
+      "y": 270
+    }
+  }
+}

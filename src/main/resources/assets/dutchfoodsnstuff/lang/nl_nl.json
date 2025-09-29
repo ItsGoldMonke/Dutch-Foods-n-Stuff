@@ -6,12 +6,13 @@
   "item.dutchfoodsnstuff.stroopwafel": "Stroopwafel",
   "item.dutchfoodsnstuff.kale": "Boerenkool",
   "item.dutchfoodsnstuff.kale_seeds": "Boerenkool Zaadjes",
-  "item.dutchfoodsnstuff.klompen": "Clogs",
-
+  "item.dutchfoodsnstuff.klompen": "Klompen",
+  "item.dutchfoodsnstuff.dough_ball": "Balletje Deeg",
+  "item.dutchfoodsnstuff.oliebol": "Oliebol",
   "item.dutchfoodsnstuff.klompen.tooltip": "Maakt je langzamer",
-
+  "item.dutchfoodsnstuff.doughball.tooltip": "Gooi me in lava!",
   "tag.item.dutchfoodsnstuff.repairs_cheese_slicer": "Repareert Kaasschaaf",
   "tag.item.dutchfoodsnstuff.repairs_wooden_armor": "Repareert Klompen",
-
+  "tag.item.c.seeds.kale": "Kale Seeds",
   "itemGroup.dutch_foods_items": "Dutch Foods 'n Stuff"
 }

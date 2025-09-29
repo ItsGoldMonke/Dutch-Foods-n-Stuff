@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.data.recipe.RecipeExporter;
 import net.minecraft.data.recipe.RecipeGenerator;
+import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryKey;
@@ -35,6 +36,19 @@ public class ModRecipeProvider  extends FabricRecipeProvider {
                         .criterion(hasItem(Items.MILK_BUCKET), conditionsFromItem(Items.MILK_BUCKET))
                         .offerTo(recipeExporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(DutchFoodsnStuff.MOD_ID, "cheese_from_milk_wheat")));
 
+                createShapeless(RecipeCategory.FOOD, ModItems.DOUGH_BALL, 4)
+                        .input(ConventionalItemTags.WHEAT_CROPS)
+                        .input(Items.POTION)
+                        .criterion(hasItem(Items.WHEAT), conditionsFromItem(Items.WHEAT))
+                        .offerTo(recipeExporter);
+
+                createShapeless(RecipeCategory.FOOD, ModItems.OLIEBOL_SUGAR, 1)
+                        .input(Items.SUGAR)
+                        .input(ModItems.OLIEBOL)
+                        .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
+                        .offerTo(recipeExporter);
+
+
 
                 offerReversibleCompactingRecipes(RecipeCategory.MISC, ModItems.CHEESE, RecipeCategory.MISC, ModBlocks.CHEESE_BLOCK);
                 createShaped(RecipeCategory.MISC, ModItems.CHEESE, 2)
@@ -58,6 +72,15 @@ public class ModRecipeProvider  extends FabricRecipeProvider {
                         .pattern("w w")
                         .pattern("w w")
                         .input('w', ItemTags.PLANKS)
+                        .criterion(hasItem(ModItems.CHEESE), conditionsFromItem(ModItems.CHEESE))
+                        .offerTo(recipeExporter);
+
+                createShaped(RecipeCategory.FOOD, ModItems.CHEESE_SOUFLE)
+                        .pattern(" b ")
+                        .pattern(" k ")
+                        .pattern(" b ")
+                        .input('k', ModItems.CHEESE)
+                        .input('b', ConventionalItemTags.BREAD_FOODS)
                         .criterion(hasItem(ModItems.CHEESE), conditionsFromItem(ModItems.CHEESE))
                         .offerTo(recipeExporter);
 

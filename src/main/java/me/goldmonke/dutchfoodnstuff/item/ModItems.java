@@ -57,6 +57,10 @@ public class ModItems {
     public static final Item STROOPWAFEL = register("stroopwafel", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(10).saturationModifier(0.5f).build(), ConsumableComponents.food().consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.SPEED, 10 * 20, 1), 1.0f)).build()));
     public static final Item KALE_SEEDS = register("kale_seeds", settings -> new BlockItem(ModBlocks.KALE_CROP, settings), new Item.Settings().useItemPrefixedTranslationKey());
     public static final Item KALE = register("kale", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f).build()));
+    public static final Item OLIEBOL = register("oliebol", Item::new, new Item.Settings().fireproof().food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.8f).build()));
+    public static final Item OLIEBOL_SUGAR = register("sugar_oliebol", Item::new, new Item.Settings().fireproof().food(new FoodComponent.Builder().nutrition(8).saturationModifier(0.8f).build()));
+    public static final Item DOUGH_BALL = register("dough_ball", Item::new, new Item.Settings().fireproof().food(new FoodComponent.Builder().nutrition(2).saturationModifier(0.2f).build()));
+    public static final Item CHEESE_SOUFLE = register("cheese_soufle", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.5f).build()));
 
 
     // Special Items ig
@@ -111,6 +115,10 @@ public class ModItems {
             itemGroup.add(ModBlocks.CHEESE_BLOCK);
             itemGroup.add(ModItems.CHEESE_SLICER);
             itemGroup.add(ModItems.STROOPWAFEL);
+            itemGroup.add(ModItems.OLIEBOL);
+            itemGroup.add(ModItems.OLIEBOL_SUGAR);
+            itemGroup.add(ModItems.CHEESE_SOUFLE);
+            itemGroup.add(ModItems.DOUGH_BALL);
             itemGroup.add(ModItems.KALE);
             itemGroup.add(ModItems.KALE_SEEDS);
             itemGroup.add(ModItems.KLOMPEN);
@@ -124,8 +132,12 @@ public class ModItems {
                 .register((itemGroup) -> {
                     itemGroup.add(ModItems.CHEESE);
                     itemGroup.add(ModItems.CHEESE_SLICE);
+                    itemGroup.add(ModItems.OLIEBOL_SUGAR);
                     itemGroup.add(ModItems.STROOPWAFEL);
+                    itemGroup.add(ModItems.CHEESE_SOUFLE);
+                    itemGroup.add(ModItems.OLIEBOL);
                     itemGroup.add(ModItems.KALE);
+                    itemGroup.add(ModItems.DOUGH_BALL);
                 });
 
         ItemGroupEvents.modifyEntriesEvent((ItemGroups.TOOLS))

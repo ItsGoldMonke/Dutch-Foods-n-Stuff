@@ -20,6 +20,7 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHEESE_BLOCK);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BOERENKOOL_POT);
     }
 
     @Override
@@ -28,9 +29,11 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CHEESE_SLICE, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHEESE_SLICER, Models.HANDHELD);
         itemModelGenerator.register(ModItems.STROOPWAFEL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.OLIEBOL, Models.GENERATED);
         itemModelGenerator.register(ModItems.KALE, Models.GENERATED);
         itemModelGenerator.register(ModItems.KALE_SEEDS, Models.GENERATED);
         itemModelGenerator.register(ModItems.KLOMPEN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DOUGH_BALL, Models.GENERATED);
 
     }
 

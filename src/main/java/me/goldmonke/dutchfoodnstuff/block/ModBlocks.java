@@ -1,6 +1,7 @@
 package me.goldmonke.dutchfoodnstuff.block;
 
 import me.goldmonke.dutchfoodnstuff.DutchFoodsnStuff;
+import me.goldmonke.dutchfoodnstuff.block.custom.BoerenkoolPot;
 import me.goldmonke.dutchfoodnstuff.block.custom.KaleBlock;
 import me.goldmonke.dutchfoodnstuff.item.ModItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -54,13 +55,14 @@ public class ModBlocks {
 
     public static final Block KALE_CROP = register("kale_crop", KaleBlock::new, AbstractBlock.Settings.create().nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP), false);
 
-
+    public static final Block BOERENKOOL_POT = register("boerenkool_pot", BoerenkoolPot::new, AbstractBlock.Settings.create().nonOpaque().strength(0.1f).sounds(BlockSoundGroup.IRON), true);
 
 
 
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent((ItemGroups.FOOD_AND_DRINK)).register((itemGroup) -> {
             itemGroup.add(ModBlocks.CHEESE_BLOCK.asItem());
+            itemGroup.add(ModBlocks.BOERENKOOL_POT.asItem());
         });
     }
 }

@@ -7,8 +7,14 @@
   "item.dutchfoodsnstuff.kale": "Kale",
   "item.dutchfoodsnstuff.kale_seeds": "Kale Seeds",
   "item.dutchfoodsnstuff.klompen": "Clogs",
+  "item.dutchfoodsnstuff.dough_ball": "Dough Ball",
+  "item.dutchfoodsnstuff.oliebol": "Oliebol",
 
   "item.dutchfoodsnstuff.klompen.tooltip": "Makes you slower",
+  "item.dutchfoodsnstuff.doughball.tooltip": "Throw me into lava!",
+
+  "block.dutchfoodsnstuff.boerenkool_pot": "Boerenkool Pot",
+
 
   "tag.item.dutchfoodsnstuff.repairs_cheese_slicer": "Repairs Cheese Slicer",
   "tag.item.dutchfoodsnstuff.repairs_wooden_armor": "Repairs Wooden Armor",
