@@ -21,7 +21,7 @@ import net.minecraft.world.World;
 
 
 public class CheeseSlicer extends Item {
-    public CheeseSlicer(Settings settings) {
+    public CheeseSlicer(net.minecraft.item.Item.Settings settings) {
         super(settings);
     }
 
@@ -37,7 +37,7 @@ public class CheeseSlicer extends Item {
 
 
         if (clickedBlock.getDefaultState().isOf(ModBlocks.CHEESE_BLOCK)) {
-            if(!world.isClient()) {
+            if(!world.isClient) {
                 context.getPlayer().incrementStat(ModStats.CHEESE_SLICED);
                 world.spawnEntity(new ItemEntity(world, blockPos.getX() + 0.5, blockPos.getY(), blockPos.getZ() + 0.5, new ItemStack(ModItems.CHEESE_SLICE, 16)));
                 world.setBlockState(context.getBlockPos(), Blocks.AIR.getDefaultState());
