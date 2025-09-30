@@ -113,6 +113,7 @@ public class ModItems {
             itemGroup.add(ModItems.CHEESE);
             itemGroup.add(ModItems.CHEESE_SLICE);
             itemGroup.add(ModBlocks.CHEESE_BLOCK);
+            itemGroup.add(ModBlocks.BOERENKOOL_POT);
             itemGroup.add(ModItems.CHEESE_SLICER);
             itemGroup.add(ModItems.STROOPWAFEL);
             itemGroup.add(ModItems.OLIEBOL);
