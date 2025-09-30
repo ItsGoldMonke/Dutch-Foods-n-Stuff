@@ -9,16 +9,22 @@
   "item.dutchfoodsnstuff.klompen": "Clogs",
   "item.dutchfoodsnstuff.dough_ball": "Dough Ball",
   "item.dutchfoodsnstuff.oliebol": "Oliebol",
+  "item.dutchfoodsnstuff.powdered_sugar_oliebol": "Oliebol with Powdered Sugar",
+  "item.dutchfoodsnstuff.cheese_soufle": "Cheese Soufle",
+  "item.dutchfoodsnstuff.boerenkool_pot": "Stamppot Boerenkool",
 
   "item.dutchfoodsnstuff.klompen.tooltip": "Makes you slower",
   "item.dutchfoodsnstuff.doughball.tooltip": "Throw me into lava!",
 
-  "block.dutchfoodsnstuff.boerenkool_pot": "Boerenkool Pot",
+  "block.dutchfoodsnstuff.boerenkool_pot": "Stamppot Boerenkool",
 
 
   "tag.item.dutchfoodsnstuff.repairs_cheese_slicer": "Repairs Cheese Slicer",
   "tag.item.dutchfoodsnstuff.repairs_wooden_armor": "Repairs Wooden Armor",
   "tag.item.c.seeds.kale": "Kale Seeds",
+
+
+  "stat.dutchfoodsnstuff.eat_stamppot_boerenkool": "Stamppot Boerenkool Eaten",
 
   "itemGroup.dutch_foods_items": "Dutch Foods 'n Stuff"
 }

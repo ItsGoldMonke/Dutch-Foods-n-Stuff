@@ -58,7 +58,7 @@ public class ModItems {
     public static final Item KALE_SEEDS = register("kale_seeds", settings -> new BlockItem(ModBlocks.KALE_CROP, settings), new Item.Settings().useItemPrefixedTranslationKey());
     public static final Item KALE = register("kale", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f).build()));
     public static final Item OLIEBOL = register("oliebol", Item::new, new Item.Settings().fireproof().food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.8f).build()));
-    public static final Item OLIEBOL_SUGAR = register("sugar_oliebol", Item::new, new Item.Settings().fireproof().food(new FoodComponent.Builder().nutrition(8).saturationModifier(0.8f).build()));
+    public static final Item OLIEBOL_SUGAR = register("powdered_sugar_oliebol", Item::new, new Item.Settings().fireproof().food(new FoodComponent.Builder().nutrition(8).saturationModifier(0.8f).build()));
     public static final Item DOUGH_BALL = register("dough_ball", Item::new, new Item.Settings().fireproof().food(new FoodComponent.Builder().nutrition(2).saturationModifier(0.2f).build()));
     public static final Item CHEESE_SOUFLE = register("cheese_soufle", Item::new, new Item.Settings().food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.5f).build()));
 

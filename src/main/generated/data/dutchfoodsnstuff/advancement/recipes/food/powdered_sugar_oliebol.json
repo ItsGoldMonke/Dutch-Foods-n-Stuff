@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dutchfoodsnstuff:sugar_oliebol"
+        "recipe": "dutchfoodsnstuff:powdered_sugar_oliebol"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "dutchfoodsnstuff:sugar_oliebol"
+      "dutchfoodsnstuff:powdered_sugar_oliebol"
     ]
   }
 }
