@@ -1,6 +1,7 @@
 // 1.21.8	-999999999-01-01T00:00:00	Dutch Foods 'n Stuff/Model Definitions
 a33e245feb0681eca788ddcd6c2fa492c14d76ed assets/dutchfoodsnstuff/blockstates/boerenkool_pot.json
 5437b55a311509d32859471291b2e6597cd1b28f assets/dutchfoodsnstuff/blockstates/cheese_block.json
+8e47032e0d9168f6d24b1de44c86019bc838e335 assets/dutchfoodsnstuff/items/bitterbal.json
 03b1cba5ebc96d02493789ec23f1b0cbc0168d95 assets/dutchfoodsnstuff/items/boerenkool_pot.json
 08f9a9631b532c032886040a73699ac7690fd0fa assets/dutchfoodsnstuff/items/cheese.json
 fc716fdbf614c00234f31c68c26f7fccdcbd804e assets/dutchfoodsnstuff/items/cheese_block.json
@@ -15,6 +16,7 @@ c8a4830d1918db60360d9b43dd2ab4d0c71455dc assets/dutchfoodsnstuff/items/klompen.j
 505de5be0a1d002660c53c8ba0c1fadcaa7c75ab assets/dutchfoodsnstuff/items/powdered_sugar_oliebol.json
 4c675b1696824fcebbeb21152e2abdb3f6373cae assets/dutchfoodsnstuff/items/stroopwafel.json
 3f356134369ea318e324c2eca41633db7da2502f assets/dutchfoodsnstuff/models/block/cheese_block.json
+9440e942d4d33bc4a82b48f3341354515026b947 assets/dutchfoodsnstuff/models/item/bitterbal.json
 83e97ed5c62262c4a3bf6700c6e3b397b88b702e assets/dutchfoodsnstuff/models/item/cheese.json
 72a9a3c1f120e36f8e58eed98b74c16cddd0b63f assets/dutchfoodsnstuff/models/item/cheese_slice.json
 cf694fbe449914c75680c1db1fba4e6fdc3065ee assets/dutchfoodsnstuff/models/item/cheese_slicer.json

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "#c:foods/cooked_meat",
+    "#c:eggs",
+    "#c:crops/wheat"
+  ],
+  "result": {
+    "count": 4,
+    "id": "dutchfoodsnstuff:bitterbal"
+  }
+}

@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier;
 public class ModStats {
 
     public static final Identifier EAT_STAMPPOT_BOERENKOOL = register("eat_stamppot_boerenkool", StatFormatter.DEFAULT);
+    public static final Identifier CHEESE_SLICED = register("cheese_sliced", StatFormatter.DEFAULT);
 
 
 

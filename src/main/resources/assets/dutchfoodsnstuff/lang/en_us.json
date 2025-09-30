@@ -12,6 +12,7 @@
   "item.dutchfoodsnstuff.powdered_sugar_oliebol": "Oliebol with Powdered Sugar",
   "item.dutchfoodsnstuff.cheese_soufle": "Cheese Soufle",
   "item.dutchfoodsnstuff.boerenkool_pot": "Stamppot Boerenkool",
+  "item.dutchfoodsnstuff.bitterbal": "Bitterbal",
 
   "item.dutchfoodsnstuff.klompen.tooltip": "Makes you slower",
   "item.dutchfoodsnstuff.doughball.tooltip": "Throw me into lava!",
@@ -25,6 +26,7 @@
 
 
   "stat.dutchfoodsnstuff.eat_stamppot_boerenkool": "Stamppot Boerenkool Eaten",
+  "stat.dutchfoodsnstuff.cheese_sliced": "Cheese Sliced",
 
   "itemGroup.dutch_foods_items": "Dutch Foods 'n Stuff"
 }

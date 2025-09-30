@@ -54,6 +54,13 @@ public class ModRecipeProvider  extends FabricRecipeProvider {
                         .input(ModItems.KALE)
                         .criterion(hasItem(ModItems.KALE), conditionsFromItem(ModItems.KALE))
                         .offerTo(recipeExporter);
+                createShapeless(RecipeCategory.FOOD, ModItems.BITTERBAL, 4)
+                        .input(ConventionalItemTags.COOKED_MEAT_FOODS)
+                        .input(ConventionalItemTags.EGGS)
+                        .input(ConventionalItemTags.WHEAT_CROPS)
+                        .criterion(hasItem(Items.WHEAT), conditionsFromItem(Items.WHEAT))
+                        .offerTo(recipeExporter);
+
 
 
 

@@ -2,6 +2,7 @@ package me.goldmonke.dutchfoodnstuff.item.custom;
 
 import me.goldmonke.dutchfoodnstuff.block.ModBlocks;
 import me.goldmonke.dutchfoodnstuff.item.ModItems;
+import me.goldmonke.dutchfoodnstuff.util.ModStats;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EquipmentSlot;
@@ -37,7 +38,7 @@ public class CheeseSlicer extends Item {
 
         if (clickedBlock.getDefaultState().isOf(ModBlocks.CHEESE_BLOCK)) {
             if(!world.isClient) {
-
+                context.getPlayer().incrementStat(ModStats.CHEESE_SLICED);
                 world.spawnEntity(new ItemEntity(world, blockPos.getX() + 0.5, blockPos.getY(), blockPos.getZ() + 0.5, new ItemStack(ModItems.CHEESE_SLICE, 16)));
                 world.setBlockState(context.getBlockPos(), Blocks.AIR.getDefaultState());
                 world.playSound(null, context.getBlockPos(), SoundEvents.BLOCK_CACTUS_FLOWER_BREAK, SoundCategory.BLOCKS, 1.0F, 0.8F);

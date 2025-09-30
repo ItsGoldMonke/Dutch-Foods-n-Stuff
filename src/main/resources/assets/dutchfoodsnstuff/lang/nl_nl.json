@@ -13,6 +13,15 @@
   "item.dutchfoodsnstuff.doughball.tooltip": "Gooi me in lava!",
   "tag.item.dutchfoodsnstuff.repairs_cheese_slicer": "Repareert Kaasschaaf",
   "tag.item.dutchfoodsnstuff.repairs_wooden_armor": "Repareert Klompen",
-  "tag.item.c.seeds.kale": "Kale Seeds",
-  "itemGroup.dutch_foods_items": "Dutch Foods 'n Stuff"
+  "tag.item.c.seeds.kale": "Boerenkool Zaadjes",
+  "itemGroup.dutch_foods_items": "Dutch Foods 'n Stuff",
+
+
+  "item.dutchfoodsnstuff.powdered_sugar_oliebol": "Oliebol met Poedersuiker",
+  "item.dutchfoodsnstuff.cheese_soufle": "Kaassouflé",
+  "item.dutchfoodsnstuff.boerenkool_pot": "Stamppot Boerenkool",
+  "item.dutchfoodsnstuff.bitterbal": "Bitterbal",
+  "block.dutchfoodsnstuff.boerenkool_pot": "Stamppot Boerenkool",
+  "stat.dutchfoodsnstuff.eat_stamppot_boerenkool": "Stamppot Boerenkool Gegeten",
+  "stat.dutchfoodsnstuff.cheese_sliced": "Kaas geschaafd"
 }

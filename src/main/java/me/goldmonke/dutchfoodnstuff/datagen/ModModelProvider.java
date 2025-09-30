@@ -36,6 +36,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.KALE_SEEDS, Models.GENERATED);
         itemModelGenerator.register(ModItems.KLOMPEN, Models.GENERATED);
         itemModelGenerator.register(ModItems.DOUGH_BALL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BITTERBAL, Models.GENERATED);
 
     }
 
