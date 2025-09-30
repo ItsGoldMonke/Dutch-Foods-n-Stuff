@@ -48,6 +48,13 @@ public class ModRecipeProvider  extends FabricRecipeProvider {
                         .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                         .offerTo(recipeExporter);
 
+                createShapeless(RecipeCategory.FOOD, ModBlocks.BOERENKOOL_POT, 1)
+                        .input(Items.CAULDRON)
+                        .input(ConventionalItemTags.RAW_MEAT_FOODS)
+                        .input(ModItems.KALE)
+                        .criterion(hasItem(ModItems.KALE), conditionsFromItem(ModItems.KALE))
+                        .offerTo(recipeExporter);
+
 
 
                 offerReversibleCompactingRecipes(RecipeCategory.MISC, ModItems.CHEESE, RecipeCategory.MISC, ModBlocks.CHEESE_BLOCK);

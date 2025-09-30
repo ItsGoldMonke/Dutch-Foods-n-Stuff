@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_kale": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dutchfoodsnstuff:kale"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dutchfoodsnstuff:boerenkool_pot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_kale"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dutchfoodsnstuff:boerenkool_pot"
+    ]
+  }
+}

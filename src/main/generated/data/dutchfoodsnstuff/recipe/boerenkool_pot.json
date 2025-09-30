@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:cauldron",
+    "#c:foods/raw_meat",
+    "dutchfoodsnstuff:kale"
+  ],
+  "result": {
+    "count": 1,
+    "id": "dutchfoodsnstuff:boerenkool_pot"
+  }
+}
