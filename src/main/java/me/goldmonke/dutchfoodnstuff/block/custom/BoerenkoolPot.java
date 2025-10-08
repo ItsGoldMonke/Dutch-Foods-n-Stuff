@@ -1,19 +1,15 @@
 package me.goldmonke.dutchfoodnstuff.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import me.goldmonke.dutchfoodnstuff.item.ModItems;
 import me.goldmonke.dutchfoodnstuff.util.ModStats;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.block.ShapeContext;
-import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.Items;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.stat.Stats;
 import net.minecraft.state.StateManager;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -60,7 +56,7 @@ public class BoerenkoolPot extends HorizontalFacingBlock {
 
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if (world.isClient) {
+        if (world.isClient()) {
             if (tryEat(world, pos, state, player).isAccepted()) {
                 return ActionResult.SUCCESS;
             }

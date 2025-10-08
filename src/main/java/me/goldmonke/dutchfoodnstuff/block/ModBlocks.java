@@ -3,7 +3,6 @@ package me.goldmonke.dutchfoodnstuff.block;
 import me.goldmonke.dutchfoodnstuff.DutchFoodsnStuff;
 import me.goldmonke.dutchfoodnstuff.block.custom.BoerenkoolPot;
 import me.goldmonke.dutchfoodnstuff.block.custom.KaleBlock;
-import me.goldmonke.dutchfoodnstuff.item.ModItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;

@@ -2,7 +2,6 @@ package me.goldmonke.dutchfoodnstuff.datagen;
 
 import me.goldmonke.dutchfoodnstuff.block.ModBlocks;
 import me.goldmonke.dutchfoodnstuff.item.ModItems;
-import me.goldmonke.dutchfoodnstuff.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.CropBlock;

@@ -1,13 +1,9 @@
 package me.goldmonke.dutchfoodnstuff.datagen;
 
 import me.goldmonke.dutchfoodnstuff.block.ModBlocks;
-import me.goldmonke.dutchfoodnstuff.item.ModItems;
 import me.goldmonke.dutchfoodnstuff.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
-import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
-import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 

@@ -1,7 +1,6 @@
 package me.goldmonke.dutchfoodnstuff.item.armor;
 
 import me.goldmonke.dutchfoodnstuff.item.ModItems;
-import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -13,7 +12,7 @@ import net.minecraft.server.world.ServerWorld;
 import org.jetbrains.annotations.Nullable;
 
 public class KlompenItem extends Item {
-    public KlompenItem(Settings settings) {
+    public KlompenItem(net.minecraft.item.Item.Settings settings) {
         super(settings);
     }
 
