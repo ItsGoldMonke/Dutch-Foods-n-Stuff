@@ -14,7 +14,7 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHEESE_BLOCK);
-        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BOERENKOOL_POT);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotatable(ModBlocks.BOERENKOOL_POT);
     }
 
     @Override
