@@ -2,6 +2,7 @@ package me.goldmonke.dutchfoodnstuff;
 
 import me.goldmonke.dutchfoodnstuff.block.ModBlocks;
 import me.goldmonke.dutchfoodnstuff.item.ModItems;
+import me.goldmonke.dutchfoodnstuff.item.armor.WoodenArmorMaterial;
 import me.goldmonke.dutchfoodnstuff.util.ModStats;
 import net.fabricmc.api.ModInitializer;
 
@@ -14,6 +15,7 @@ public class DutchFoodsnStuff implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+        WoodenArmorMaterial.initialize();
         ModItems.initialize();
         ModBlocks.initialize();
         ModStats.initialize();

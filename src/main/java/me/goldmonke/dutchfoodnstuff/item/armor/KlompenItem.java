@@ -16,6 +16,8 @@ public class KlompenItem extends Item {
         super(settings);
     }
 
+
+
     @Override
     public void inventoryTick(ItemStack stack, ServerWorld world, Entity entity, @Nullable EquipmentSlot slot) {
         if (!world.isClient()) {
