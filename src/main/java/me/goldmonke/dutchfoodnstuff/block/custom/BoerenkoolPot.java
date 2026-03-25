@@ -2,66 +2,66 @@ package me.goldmonke.dutchfoodnstuff.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import me.goldmonke.dutchfoodnstuff.util.ModStats;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.HorizontalFacingBlock;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.state.StateManager;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
-import net.minecraft.world.event.GameEvent;
+import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class BoerenkoolPot extends HorizontalFacingBlock {
+public class BoerenkoolPot extends HorizontalDirectionalBlock {
 
-    public static final MapCodec<BoerenkoolPot> CODEC = createCodec(BoerenkoolPot::new);
+    public static final MapCodec<BoerenkoolPot> CODEC = simpleCodec(BoerenkoolPot::new);
 
-    private static final VoxelShape SHAPE = Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 9.0, 14.0);
+    private static final VoxelShape SHAPE = Block.box(2.0, 0.0, 2.0, 14.0, 9.0, 14.0);
 
-    public BoerenkoolPot(Settings settings) {
+    public BoerenkoolPot(Properties settings) {
         super(settings);
     }
 
     @Override
-    protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+    protected VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return SHAPE;
     }
 
     @Override
-    protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
+    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
         return CODEC;
     }
 
 
     @Override
-    public @Nullable BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+    public @Nullable BlockState getStateForPlacement(BlockPlaceContext ctx) {
+        return this.defaultBlockState().setValue(FACING, ctx.getHorizontalDirection().getOpposite());
     }
 
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING);
     }
 
 
     @Override
-    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if (world.isClient()) {
-            if (tryEat(world, pos, state, player).isAccepted()) {
-                return ActionResult.SUCCESS;
+    protected InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
+        if (world.isClientSide()) {
+            if (tryEat(world, pos, state, player).consumesAction()) {
+                return InteractionResult.SUCCESS;
             }
-            if (player.getStackInHand(Hand.MAIN_HAND).isEmpty()) {
-                return ActionResult.CONSUME;
+            if (player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty()) {
+                return InteractionResult.CONSUME;
             }
         }
         return tryEat(world, pos, state, player);
@@ -69,20 +69,20 @@ public class BoerenkoolPot extends HorizontalFacingBlock {
 
 
 
-        protected static ActionResult tryEat (WorldAccess world, BlockPos pos, BlockState state, PlayerEntity player){
-            if (!player.canConsume(false)) {
-                return ActionResult.PASS;
+        protected static InteractionResult tryEat (LevelAccessor world, BlockPos pos, BlockState state, Player player){
+            if (!player.canEat(false)) {
+                return InteractionResult.PASS;
             } else {
-                player.incrementStat(ModStats.EAT_STAMPPOT_BOERENKOOL);
-                player.getHungerManager().add(6, 0.3F);
-                world.emitGameEvent(player, GameEvent.EAT, pos);
-                world.playSound(player, pos, SoundEvents.ENTITY_GENERIC_EAT.value(), SoundCategory.PLAYERS); // here done
-                world.playSound(player, pos, SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS); // here done
-                world.breakBlock(pos, true);
-                world.emitGameEvent(player, GameEvent.BLOCK_DESTROY, pos);
+                player.awardStat(ModStats.EAT_STAMPPOT_BOERENKOOL);
+                player.getFoodData().eat(6, 0.3F);
+                world.gameEvent(player, GameEvent.EAT, pos);
+                world.playSound(player, pos, SoundEvents.GENERIC_EAT.value(), SoundSource.PLAYERS); // here done
+                world.playSound(player, pos, SoundEvents.PLAYER_BURP, SoundSource.PLAYERS); // here done
+                world.destroyBlock(pos, true);
+                world.gameEvent(player, GameEvent.BLOCK_DESTROY, pos);
             }
 
-            return ActionResult.SUCCESS;
+            return InteractionResult.SUCCESS;
         }
 
 }

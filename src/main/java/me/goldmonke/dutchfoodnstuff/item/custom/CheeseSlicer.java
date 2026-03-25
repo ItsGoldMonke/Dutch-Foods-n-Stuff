@@ -3,25 +3,25 @@ package me.goldmonke.dutchfoodnstuff.item.custom;
 import me.goldmonke.dutchfoodnstuff.block.ModBlocks;
 import me.goldmonke.dutchfoodnstuff.item.ModItems;
 import me.goldmonke.dutchfoodnstuff.util.ModStats;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.ItemEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUsageContext;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 
 
 public class CheeseSlicer extends Item {
-    public CheeseSlicer(net.minecraft.item.Item.Settings settings) {
+    public CheeseSlicer(net.minecraft.world.item.Item.Properties settings) {
         super(settings);
     }
 
@@ -29,31 +29,31 @@ public class CheeseSlicer extends Item {
 
 
     @Override
-    public ActionResult useOnBlock(ItemUsageContext context) {
+    public InteractionResult useOn(UseOnContext context) {
 
-        World world = context.getWorld();
-        Block clickedBlock = world.getBlockState(context.getBlockPos()).getBlock();
-        BlockPos blockPos = context.getBlockPos();
+        Level world = context.getLevel();
+        Block clickedBlock = world.getBlockState(context.getClickedPos()).getBlock();
+        BlockPos blockPos = context.getClickedPos();
 
 
-        if (clickedBlock.getDefaultState().isOf(ModBlocks.CHEESE_BLOCK)) {
-            if(!world.isClient()) {
-                context.getPlayer().incrementStat(ModStats.CHEESE_SLICED);
-                world.spawnEntity(new ItemEntity(world, blockPos.getX() + 0.5, blockPos.getY(), blockPos.getZ() + 0.5, new ItemStack(ModItems.CHEESE_SLICE, 16)));
-                world.setBlockState(context.getBlockPos(), Blocks.AIR.getDefaultState());
-                world.playSound(null, context.getBlockPos(), SoundEvents.BLOCK_CACTUS_FLOWER_BREAK, SoundCategory.BLOCKS, 1.0F, 0.8F);
-                context.getStack().damage(1, ((ServerWorld) world), ((ServerPlayerEntity) context.getPlayer()),
-                        item -> context.getPlayer().sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
+        if (clickedBlock.defaultBlockState().is(ModBlocks.CHEESE_BLOCK)) {
+            if(!world.isClientSide()) {
+                context.getPlayer().awardStat(ModStats.CHEESE_SLICED);
+                world.addFreshEntity(new ItemEntity(world, blockPos.getX() + 0.5, blockPos.getY(), blockPos.getZ() + 0.5, new ItemStack(ModItems.CHEESE_SLICE, 16)));
+                world.setBlockAndUpdate(context.getClickedPos(), Blocks.AIR.defaultBlockState());
+                world.playSound(null, context.getClickedPos(), SoundEvents.CACTUS_FLOWER_BREAK, SoundSource.BLOCKS, 1.0F, 0.8F);
+                context.getItemInHand().hurtAndBreak(1, ((ServerLevel) world), ((ServerPlayer) context.getPlayer()),
+                        item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
             }
 
 
-            return ActionResult.SUCCESS;
+            return InteractionResult.SUCCESS;
         }
 
 
 
-        return ActionResult.PASS;
+        return InteractionResult.PASS;
     }
 
 

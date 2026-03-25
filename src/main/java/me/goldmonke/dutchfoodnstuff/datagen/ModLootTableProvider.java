@@ -2,33 +2,32 @@ package me.goldmonke.dutchfoodnstuff.datagen;
 
 import me.goldmonke.dutchfoodnstuff.block.ModBlocks;
 import me.goldmonke.dutchfoodnstuff.item.ModItems;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.block.CropBlock;
-import net.minecraft.item.Items;
-import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
-import net.minecraft.loot.condition.LootCondition;
-import net.minecraft.predicate.StatePredicate;
-import net.minecraft.registry.RegistryWrapper;
-
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
+import net.minecraft.advancements.criterion.StatePropertiesPredicate;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import java.util.concurrent.CompletableFuture;
 
-public class ModLootTableProvider extends FabricBlockLootTableProvider {
-    public ModLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+public class ModLootTableProvider extends FabricBlockLootSubProvider {
+    public ModLootTableProvider(FabricPackOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(dataOutput, registryLookup);
     }
 
     @Override
     public void generate() {
         // Add block drops
-        addDrop(ModBlocks.CHEESE_BLOCK);
-        addDrop(ModBlocks.BOERENKOOL_POT, Items.CAULDRON);
+        dropSelf(ModBlocks.CHEESE_BLOCK);
+        dropOther(ModBlocks.BOERENKOOL_POT, Items.CAULDRON);
 
 
         // Crop Loot Table
-        LootCondition.Builder builder2 = BlockStatePropertyLootCondition.builder(ModBlocks.KALE_CROP)
-                .properties(StatePredicate.Builder.create().exactMatch(CropBlock.AGE, 7));
-        addDrop(ModBlocks.KALE_CROP, cropDrops(ModBlocks.KALE_CROP, ModItems.KALE, ModItems.KALE_SEEDS, builder2));
+        LootItemCondition.Builder builder2 = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.KALE_CROP)
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropBlock.AGE, 7));
+        add(ModBlocks.KALE_CROP, createCropDrops(ModBlocks.KALE_CROP, ModItems.KALE, ModItems.KALE_SEEDS, builder2));
 
     }
 }
