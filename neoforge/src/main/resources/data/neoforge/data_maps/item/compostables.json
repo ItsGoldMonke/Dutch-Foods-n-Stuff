@@ -1,0 +1,10 @@
+{
+  "values": {
+    "dutchfoodsnstuff:kale": {
+      "chance": 0.65
+    },
+    "dutchfoodsnstuff:kale_seeds": {
+      "chance": 0.3
+    }
+  }
+}

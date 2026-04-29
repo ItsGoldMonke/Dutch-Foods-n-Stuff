@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "i": {
+      "tag": "c:ingots/iron"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    " ii",
+    " si",
+    "s  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "dutchfoodsnstuff:cheese_slicer"
+  }
+}

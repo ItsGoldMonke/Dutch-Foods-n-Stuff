@@ -20,6 +20,9 @@
     ],
     "client": [
       "me.goldmonke.dutchfoodnstuff.fabric.client.ExampleModFabricClient"
+    ],
+    "fabric-datagen": [
+      "me.goldmonke.dutchfoodnstuff.fabric.DutchFoodsnStuffDataGenerator"
     ]
   },
   "mixins": [
@@ -31,8 +34,5 @@
     "java": ">=21",
     "architectury": ">=13.0.8",
     "fabric-api": "*"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }

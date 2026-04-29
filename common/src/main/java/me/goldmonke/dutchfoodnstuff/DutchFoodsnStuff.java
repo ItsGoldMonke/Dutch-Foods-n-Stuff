@@ -1,8 +1,11 @@
 package me.goldmonke.dutchfoodnstuff;
 
 
-import net.fabricmc.api.ModInitializer;
+import me.goldmonke.dutchfoodnstuff.block.ModBlocks;
+import me.goldmonke.dutchfoodnstuff.item.ModItems;
 
+import me.goldmonke.dutchfoodnstuff.item.armor.ModArmorMaterials;
+import me.goldmonke.dutchfoodnstuff.util.ModStats;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,8 +15,11 @@ public class DutchFoodsnStuff {
 
 
 	public static void init() {
-//        ModItems.initialize();
-//        ModBlocks.initialize();
-//        ModStats.initialize();
+		LOGGER.info("Initializing Mod");
+		ModTabs.initialize();
+		ModArmorMaterials.initialize();
+		ModBlocks.initialize();
+		ModItems.initialize();
+        ModStats.initialize();
     }
 }

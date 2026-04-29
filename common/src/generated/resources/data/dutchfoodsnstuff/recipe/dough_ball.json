@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:crops/wheat"
+    },
+    {
+      "item": "minecraft:potion"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "dutchfoodsnstuff:dough_ball"
+  }
+}

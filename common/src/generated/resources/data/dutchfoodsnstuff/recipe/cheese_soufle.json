@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "c:foods/bread"
+    },
+    "k": {
+      "item": "dutchfoodsnstuff:cheese"
+    }
+  },
+  "pattern": [
+    " b ",
+    " k ",
+    " b "
+  ],
+  "result": {
+    "count": 1,
+    "id": "dutchfoodsnstuff:cheese_soufle"
+  }
+}

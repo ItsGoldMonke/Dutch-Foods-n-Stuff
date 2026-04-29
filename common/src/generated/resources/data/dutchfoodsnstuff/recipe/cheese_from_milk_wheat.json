@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "Cheese",
+  "ingredients": [
+    {
+      "tag": "c:buckets/milk"
+    },
+    {
+      "item": "minecraft:wheat"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "dutchfoodsnstuff:cheese"
+  }
+}

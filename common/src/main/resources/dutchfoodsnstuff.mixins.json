@@ -2,12 +2,16 @@
   "required": true,
   "package": "me.goldmonke.dutchfoodnstuff.mixin",
   "compatibilityLevel": "JAVA_21",
-  "minVersion": "0.8",
-  "client": [
-  ],
   "mixins": [
+    "BlockBehaviourMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "client": [
+    "RenderLayersMixin"
+  ]
 }

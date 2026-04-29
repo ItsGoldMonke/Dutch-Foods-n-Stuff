@@ -53,3 +53,13 @@ shadowJar {
 remapJar {
     inputFile.set shadowJar.archiveFile
 }
+
+fabricApi {
+    configureDataGeneration() {
+        modId = "dutchfoodsnstuff"
+        client = true
+        outputDirectory = project(":common").file("src/generated/resources")
+        addToResources = false
+        createSourceSet = false
+    }
+}
