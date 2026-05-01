@@ -11,7 +11,5 @@
   "overwrites": {
     "requireAnnotations": true
   },
-  "client": [
-    "RenderLayersMixin"
-  ]
+  "client": []
 }

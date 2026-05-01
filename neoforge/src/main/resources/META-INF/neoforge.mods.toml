@@ -1,15 +1,15 @@
 modLoader = "javafml"
 loaderVersion = "[4,)"
 #issueTrackerURL = ""
-license = "Insert License Here"
+license = "MIT"
 
 [[mods]]
 modId = "dutchfoodsnstuff"
 version = "${version}"
 displayName = "Dutch Foods 'n Stuff"
-authors = "Me!"
+authors = "GoldMonke"
 description = '''
-This is an example description! Tell everyone what your mod is about!
+This is a Mod That Adds Dutch Food and More!
 '''
 #logoFile = ""
 

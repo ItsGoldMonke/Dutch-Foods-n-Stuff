@@ -3,15 +3,15 @@
   "id": "dutchfoodsnstuff",
   "version": "${version}",
   "name": "Dutch Foods 'n Stuff",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "This is a Mod That Adds Dutch Food and More!",
   "authors": [
-    "Me!"
+    "GoldMonke"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://goldmonke.me",
+    "sources": "https://github.com/ItsGoldMonke/Dutch-Foods-n-Stuff"
   },
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/dutchfoodsnstuff/icon.png",
   "environment": "*",
   "entrypoints": {
@@ -19,7 +19,7 @@
       "me.goldmonke.dutchfoodnstuff.fabric.DutchFoodsnStuffFabric"
     ],
     "client": [
-      "me.goldmonke.dutchfoodnstuff.fabric.client.ExampleModFabricClient"
+      "me.goldmonke.dutchfoodnstuff.fabric.client.DutchFoodsnStuffFabricClient"
     ],
     "fabric-datagen": [
       "me.goldmonke.dutchfoodnstuff.fabric.DutchFoodsnStuffDataGenerator"
