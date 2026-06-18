@@ -57,9 +57,9 @@ public class ModItems {
 
 
         LootEvent.MODIFY_LOOT_TABLE.register((key, context, builtin) -> {
-            // Check that the loot table is dirt and built-in
+            // Check that the loot table is tall/short grass and built-in
             if (builtin && (Blocks.TALL_GRASS.getLootTable().equals(key) || Blocks.SHORT_GRASS.getLootTable().equals(key))) {
-                // Create a loot pool with a single item entry of Items.DIAMOND
+                // Add kale seeds to grass drops with a small random chance
                 LootPool.Builder pool = LootPool.lootPool().add(LootItem.lootTableItem(ModItems.KALE_SEEDS.get()).when(LootItemRandomChanceCondition.randomChance(0.125f)));
                 context.addPool(pool);
             }
